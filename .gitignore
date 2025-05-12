@@ -165,7 +165,7 @@ cython_debug/
 ### VirtualEnv template
 # Virtualenv
 # http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
-.Python
+# .Python # (duplicate)
 [Bb]in
 [Ii]nclude
 [Ll]ib
@@ -173,19 +173,19 @@ cython_debug/
 [Ll]ocal
 [Ss]cripts
 pyvenv.cfg
-.venv
+# .venv # (duplicate)
 pip-selfcheck.json
 
 ### JupyterNotebooks template
 # gitignore template for Jupyter Notebooks
 # website: http://jupyter.org/
 
-.ipynb_checkpoints
+# .ipynb_checkpoints # (duplicate)
 */.ipynb_checkpoints/*
 
 # IPython
-profile_default/
-ipython_config.py
+# profile_default/ # (duplicate)
+# ipython_config.py # (duplicate)
 
 # Remove previous ipynb_checkpoints
 #   git rm -r .ipynb_checkpoints/
