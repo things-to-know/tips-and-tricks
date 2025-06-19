@@ -1,0 +1,6 @@
+# Requirements for development and testing
+
+--constraint requirements.txt
+
+# A framework for managing and maintaining multi-language pre-commit hooks
+pre_commit>=4.2.0

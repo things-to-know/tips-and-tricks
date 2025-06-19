@@ -1,6 +1,8 @@
 SHELL = /usr/bin/env bash
 
 # Python
+PYTHON_PIP_TOOLS_VERSION_SPECIFIER ?= >=7.4.1
+
 PYTHON ?= python3
 
 VENV_DIR ?= .venv
@@ -8,14 +10,16 @@ VENV_PYTHON_VERSION ?= 3.11
 OS_PYTHON_FOR_VENV = python$(VENV_PYTHON_VERSION)
 VENV_PYTHON = $(VENV_DIR)/bin/python3
 VENV_PIP = $(VENV_DIR)/bin/pip
+PYTHON_REQUIREMENTS_SRC_FILE = requirements.in
 PYTHON_REQUIREMENTS_FILE = requirements.txt
+PYTHON_REQUIREMENTS_DEV_SRC_FILE = requirements-dev.in
+PYTHON_REQUIREMENTS_DEV_FILE = requirements-dev.txt
 
 # Default target
 .DEFAULT_GOAL := help
 .PHONY: help
 .PHONY: create-venv
 .PHONY: delete-venv
-.PHONY: install-dependencies
 .PHONY: clean-pyc
 
 all: help
@@ -41,8 +45,24 @@ create-venv: ## Create virtual environment
 delete-venv: ## Delete Python virtual environment
 	rm -rf $(VENV_DIR)
 
-install-dependencies: ## Install dependencies
-	$(VENV_PIP) install -r $(PYTHON_REQUIREMENTS_FILE)
+.PHONY: install-python-pip-tools
+install-python-pip-tools: ## Install Python Pip Tools
+	${VENV_PIP} install --require-virtualenv 'pip-tools${PYTHON_PIP_TOOLS_VERSION_SPECIFIER}'
+
+.PHONY: compile-python-deps
+compile-python-deps: ## Compile all Python dependencies
+	pip-compile --strip-extras ${PYTHON_REQUIREMENTS_SRC_FILE}
+	pip-compile --strip-extras ${PYTHON_REQUIREMENTS_DEV_SRC_FILE}
+
+.PHONY: install-python-deps
+install-python-deps: ## Install Python dependencies
+	${VENV_PIP} install -r ${PYTHON_REQUIREMENTS_FILE}
+	${VENV_PIP} check
+
+.PHONY: install-python-deps-dev
+install-python-deps-dev: ## Install Python dependencies for development
+	${VENV_PIP} install -r ${PYTHON_REQUIREMENTS_DEV_FILE}
+	${VENV_PIP} check
 
 clean-pyc: ## Clean up generated Python bytecode files
 	find . -type d -name "__pycache__" -exec rm -rf {} +
