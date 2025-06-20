@@ -17,6 +17,7 @@ make install-python-pip-tools
 make compile-python-deps
 make install-python-deps
 make install-python-deps-dev
+make install-node
 ```
 
 Run [pre-commit hooks](https://pre-commit.com/) on all files:
