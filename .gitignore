@@ -390,3 +390,7 @@ GitHub.sublime-settings
 # Contains user-specific settings, such as `CommitMessageInspectionProfile`
 # (body line length limit, etc)
 .idea/vcs.xml
+
+# MyST build outputs
+# Note: MyST is used by `jupyter-book`
+_build
