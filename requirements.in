@@ -1,1 +1,24 @@
 # Main requirements
+
+# Notes:
+# - `jupyter-book` (v2):
+#   - We can't install it like a normal package because some of its dependencies are not required
+#     and they in turn have tens of dependencies that are not needed for our use case.
+#     but in their code they acknowledge that they are nice-to-haves (not needed), and they in turn
+#     have a **ton** of dependencies that are not needed for our use case.
+#     Source: https://github.com/jupyter-book/jupyter-book/blob/e27c63c/pyproject.toml#L24-L33
+#     - Dependencies:
+#       - `jupyter_core`: required
+#       - `ipykernel`: ignored
+#       - `jupyter-server`: ignored
+#     - Install `jupyter-book` without dependencies `pip install --no-deps 'jupyter-book>=2.0.0a3'`
+# - `nodeenv`:
+#   - Node.js is required for building the book.
+# jupyter-book>=2.0.0a3
+
+# Note: this is the latest version as of 2025-06-19, and it is compatible with the configured
+# version of `jupyter-book`
+jupyter_core>=5.8.1
+# Note: this is the latest version as of 2025-06-19, and it is compatible with the configured
+# version of `jupyter-book`
+nodeenv>=1.9.1
