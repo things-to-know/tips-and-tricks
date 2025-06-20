@@ -1,9 +1,23 @@
-SHELL = /usr/bin/env bash
+SHELL = /usr/bin/env bash -e -o pipefail
+
+# Notes:
+# - Wherever possible, the Make variable syntax uses curly braces (`${VAR}`) instead of parentheses (`$(VAR)`)
+#	to ease code portability between Makefiles and Bash scripts.
+#	- We will continue using parentheses for Make functions such as: `$(abspath ...)`, `$(patsubst ...)`,
+#		`$(shell ...)`, `$(subst ...)`, `$(wildcard ...)` and for Make variables that would mean something different
+#		in Bash or would not work there at all, such as: `$(*:.in=.txt)`, `$(*)`, etc.
 
 # Warning: do not use `=` instead of `:=` (we don't want late-binding)
 # Source:
 # https://github.com/things-to-know/tips-and-tricks/blob/main/src/sw/make/how-to.md#get-the-directory-of-the-makefile
 ROOT_DIR := $(shell dirname $(realpath $(firstword ${MAKEFILE_LIST})))
+
+# Trick to be able to execute **some** commands in targets using `sudo`, but not by default.
+# Example: `make SUDO=sudo install-xmllint`
+SUDO ?=
+
+# Sources Root
+SOURCES_ROOT = ${CURDIR}
 
 # Python
 PYTHON_PIP_TOOLS_VERSION_SPECIFIER ?= >=7.4.1
@@ -29,9 +43,17 @@ NODEENV = $(VENV_DIR)/bin/nodeenv
 # Node.js (local installation)
 VENV_NODEJS_BIN_DIR ?= ${VENV_DIR}/bin
 VENV_NODEJS = ${VENV_NODEJS_BIN_DIR}/node
+VENV_NODEJS_NPM = ${VENV_NODEJS_BIN_DIR}/npm
+VENV_NODEJS_MODULES_BIN_DIR ?= ./node_modules/.bin
 
-## Other tools
+# Other tools
 JUPYTER_BOOK = $(VENV_DIR)/bin/jupyter-book
+VENV_NODEJS_MARKDOWNLINT = ${VENV_NODEJS_MODULES_BIN_DIR}/markdownlint
+
+# Usually we don't modify the PATH variable, but in this case we need to add the local node
+# installation to the PATH so NPM works correctly and can find `node`. Otherwise we get the error:
+# 	`/usr/bin/env: ‘node’: No such file or directory`
+PATH := $(abspath ${VENV_NODEJS_BIN_DIR}):${PATH}
 
 # Default target
 .DEFAULT_GOAL := help
@@ -56,11 +78,15 @@ help: ## Show help
 	@$(PYTHON) -c "$$PY_SCRIPT_PARSE_PRINT_TARGETS" < $(MAKEFILE_LIST)
 
 create-venv: ## Create virtual environment
-	$(OS_PYTHON_FOR_VENV) -m venv --symlinks --upgrade-deps $(VENV_DIR)
-	$(VENV_PIP) install --upgrade wheel
+	$(OS_PYTHON_FOR_VENV) -m venv --symlinks $(VENV_DIR)
+	$(VENV_PIP) install --upgrade pip
+	$(VENV_PIP) install --upgrade setuptools wheel
 
 delete-venv: ## Delete virtual environment (Python and Node.js)
 	rm -rf $(VENV_DIR)
+
+lint-md-all:  ## Run `markdownlint` on all Markdown files
+	@${VENV_NODEJS_MARKDOWNLINT} '**/*.md' --ignore node_modules
 
 .PHONY: install-node
 install-node: ## Install Node.js into the Python virtual environment
