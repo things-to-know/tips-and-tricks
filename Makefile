@@ -30,12 +30,14 @@ NODEENV = $(VENV_DIR)/bin/nodeenv
 VENV_NODEJS_BIN_DIR ?= ${VENV_DIR}/bin
 VENV_NODEJS = ${VENV_NODEJS_BIN_DIR}/node
 
+## Other tools
+JUPYTER_BOOK = $(VENV_DIR)/bin/jupyter-book
+
 # Default target
 .DEFAULT_GOAL := help
 .PHONY: help
 .PHONY: create-venv
 .PHONY: delete-venv
-.PHONY: clean-pyc
 
 all: help
 
@@ -106,6 +108,23 @@ install-python-deps-dev: ## Install Python dependencies for development
 	${VENV_PIP} check
 	${VENV_PIP} install --no-deps -r ${PYTHON_REQUIREMENTS_NO_DEPS_FILE}
 
+.PHONY: build-jupyter-book
+build-jupyter-book: ## Build Jupyter Book
+	$(JUPYTER_BOOK) build
+
+.PHONY: build-jupyter-book-docx
+build-jupyter-book-docx: ## Build Jupyter Book and export to DOCX
+	$(JUPYTER_BOOK) build --docx
+
+.PHONY: clean-pyc
 clean-pyc: ## Clean up generated Python bytecode files
 	find . -type d -name "__pycache__" -exec rm -rf {} +
 	find . -type f -name "*.pyc" -delete
+
+.PHONY: clean-jupyter-book
+clean-jupyter-book: ## Clean up files built by Jupyter Book
+	$(JUPYTER_BOOK) clean
+
+.PHONY: clean-jupyter-book-all
+clean-jupyter-book-all: ## Clean up all files built, retrieved or generated in any form by Jupyter Book
+	$(JUPYTER_BOOK) clean --all --yes
