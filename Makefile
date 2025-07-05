@@ -42,7 +42,7 @@ delete-venv: ## Delete Python virtual environment
 	rm -rf $(VENV_DIR)
 
 install-dependencies: ## Install dependencies
-	$(VENV_PIP) install -r $(PYTHON_REQUIREMENTS_FILE)
+	$(VENV_PIP) install --no-deps -r $(PYTHON_REQUIREMENTS_FILE)
 
 clean-pyc: ## Clean up generated Python bytecode files
 	find . -type d -name "__pycache__" -exec rm -rf {} +
