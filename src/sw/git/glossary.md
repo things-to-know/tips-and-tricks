@@ -1,9 +1,15 @@
 # Software / Git / Glossary
 
-TODO
+Git has a certain vocabulary used throughout the documentation, commands and options.
+Many times it is not straightforward to understand the meaning of a term, because:
 
-- https://git-scm.com/docs/gitglossary#def_object_database
-- https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-barerepository
+- it can have different meanings depending on the context
+- its meaning can be different from the common meaning of the word in other similar software
+- it has no official definition, or the official definition is not clear enough
+- it has pseudo-official synonyms that are even used more than the official term
+
+Unfortunately, the Git official glossary is not comprehensive, and it even has inconsistencies
+(as of 2025-05-20).
 
 ## Terms
 
@@ -23,7 +29,7 @@ See [Submodule](#submodule).
 
 ### Bare repository
 
-TODO: https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-barerepository
+TODO: <https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-barerepository>
 
 ### Blame
 
@@ -43,15 +49,15 @@ Two:
 
 Sources:
 
-- https://git-scm.com/docs/git-blame
-- https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Debugging
-- https://git-scm.com/book/en/v2/Git-Tools-Debugging-with-Git#_file_annotation
+- <https://git-scm.com/docs/git-blame>
+- <https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Debugging>
+- <https://git-scm.com/book/en/v2/Git-Tools-Debugging-with-Git#_file_annotation>
 
 See [Get information](get-information.md).
 
 ### Blob object
 
-TODO: https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-blobobject
+TODO: <https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-blobobject>
 
 ### Branch
 
@@ -66,7 +72,7 @@ is done on the branch.
   [working tree](#working-tree) is associated with just one of them
   (the [current branch](#current-branch), and [`HEAD`](#head) points to that branch.
 
-TODO: https://git-scm.com/docs/gitglossary#def_branch
+TODO: <https://git-scm.com/docs/gitglossary#def_branch>
 
 ### Branch head ref (head)
 
@@ -77,7 +83,7 @@ It is a named reference to the [branch tip](#branch-tip) of a given branch.
 Technical details: each _head_ is stored in a single file in `$GIT_DIR/refs/heads/` directory
 (except when using _[packed](#pack) refs_).
 
-Source: https://git-scm.com/docs/gitglossary#def_head
+Source: <https://git-scm.com/docs/gitglossary#def_head>
 
 ### Branch tip
 
@@ -88,7 +94,7 @@ It is referenced by a single [head](#branch-head-ref-head).
 
 Sources:
 
-- https://git-scm.com/docs/gitglossary#def_branch
+- <https://git-scm.com/docs/gitglossary#def_branch>
 - Gemini 2.5 Pro
 
 ### Bisect
@@ -105,16 +111,16 @@ Two:
 
 Sources:
 
-- https://git-scm.com/book/en/v2/Git-Tools-Debugging-with-Git#_binary_search
-- https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Debugging
+- <https://git-scm.com/book/en/v2/Git-Tools-Debugging-with-Git#_binary_search>
+- <https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Debugging>
 
 ### Chain
 
-TODO: https://git-scm.com/docs/gitglossary#def_chain
+TODO: <https://git-scm.com/docs/gitglossary#def_chain>
 
 ### Check out (verb)
 
-TODO: https://git-scm.com/docs/gitglossary#def_checkout
+TODO: <https://git-scm.com/docs/gitglossary#def_checkout>
 
 Per GitHub Copilot (GPT-4.1):
 
@@ -136,7 +142,7 @@ See [Check out (verb)](#check-out-verb).
 
 ### Cherry-pick
 
-TODO: https://git-scm.com/docs/gitglossary#def_cherry-picking
+TODO: <https://git-scm.com/docs/gitglossary#def_cherry-picking>
 
 See [Cherry-pick](cherry-pick.md).
 
@@ -144,7 +150,7 @@ See [Cherry-pick](cherry-pick.md).
 
 See also: [Dirty working tree](#dirty-working-tree).
 
-TODO: https://git-scm.com/docs/gitglossary#def_clean
+TODO: <https://git-scm.com/docs/gitglossary#def_clean>
 
 See [Index and Working tree](index-working-tree.md).
 
@@ -170,8 +176,8 @@ See [Commit](commit.md).
 
 Sources:
 
-- https://git-scm.com/docs/gitglossary#def_commit
-- https://git-scm.com/docs/gitglossary#def_revision
+- <https://git-scm.com/docs/gitglossary#def_commit>
+- <https://git-scm.com/docs/gitglossary#def_revision>
 
 See also: the documentation reference on revisions and ranges
 <https://git-scm.com/docs/gitrevisions>
@@ -184,7 +190,7 @@ See also: the documentation reference on revisions and ranges
 
 See [Commit](#commit-noun).
 
-Source: https://git-scm.com/docs/gitglossary#def_commit
+Source: <https://git-scm.com/docs/gitglossary#def_commit>
 
 ### Commit author date
 
@@ -202,12 +208,12 @@ See [Commit](commit.md).
 
 TODO:
 
-- https://git-scm.com/docs/gitglossary#def_commit_graph_general
-- https://git-scm.com/docs/gitglossary#def_commit_graph_file
+- <https://git-scm.com/docs/gitglossary#def_commit_graph_general>
+- <https://git-scm.com/docs/gitglossary#def_commit_graph_file>
 
 ### Commit object
 
-TODO: https://git-scm.com/docs/gitglossary#def_commit_object
+TODO: <https://git-scm.com/docs/gitglossary#def_commit_object>
 
 > The commit objects form a [DAG](#dag), because they have [parents](#parent) (directed),
   and the graph of commit objects is acyclic (there is no [chain](#chain) which begins and ends
@@ -215,8 +221,8 @@ TODO: https://git-scm.com/docs/gitglossary#def_commit_object
 
 Source:
 
-- https://git-scm.com/docs/gitglossary#def_commit_object
-- https://git-scm.com/docs/gitglossary#def_DAG
+- <https://git-scm.com/docs/gitglossary#def_commit_object>
+- <https://git-scm.com/docs/gitglossary#def_DAG>
 
 ### Commit object dereference
 
@@ -224,11 +230,11 @@ Source:
 >
 > Commits cannot be dereferenced recursively.
 
-Source: https://git-scm.com/docs/gitglossary#def_dereference
+Source: <https://git-scm.com/docs/gitglossary#def_dereference>
 
 ### Commit-ish
 
-TODO: https://git-scm.com/docs/gitglossary#def_commit-ish
+TODO: <https://git-scm.com/docs/gitglossary#def_commit-ish>
 
 ### Committed
 
@@ -276,7 +282,7 @@ How-to:
 
 Sources:
 
-- https://git-scm.com/docs/gitglossary#def_branch
+- <https://git-scm.com/docs/gitglossary#def_branch>
 - Gemini 2.5 Pro
 
 ### DAG
@@ -287,7 +293,7 @@ See [Commit object](#commit-object).
 
 ### Dangling object
 
-TODO: https://git-scm.com/docs/gitglossary#def_dangling_object
+TODO: <https://git-scm.com/docs/gitglossary#def_dangling_object>
 
 ### Dereference
 
@@ -302,7 +308,7 @@ Note:
 > Unless otherwise specified, "dereferencing" as it used in the context of Git commands or protocols
   is implicitly recursive.
 
-Source: https://git-scm.com/docs/gitglossary#def_dereference
+Source: <https://git-scm.com/docs/gitglossary#def_dereference>
 
 ### Detached
 
@@ -323,7 +329,7 @@ Explanation:
 > Git also allows you to check out an arbitrary commit that isn't necessarily the _tip_
 > of any particular branch.
 
-Source: https://git-scm.com/docs/gitglossary#def_detached_HEAD
+Source: <https://git-scm.com/docs/gitglossary#def_detached_HEAD>
 
 ### Diff
 
@@ -335,21 +341,21 @@ See [Diff](diff.md).
 
 See also: [Clean working tree](#clean-working-tree).
 
-TODO: https://git-scm.com/docs/gitglossary#def_dirty
+TODO: <https://git-scm.com/docs/gitglossary#def_dirty>
 
 See [Index and Working tree](index-working-tree.md).
 
 ### Evil merge
 
-TODO: https://git-scm.com/docs/gitglossary#def_evil_merge
+TODO: <https://git-scm.com/docs/gitglossary#def_evil_merge>
 
 ### Fast-forward merge
 
-TODO: https://git-scm.com/docs/gitglossary#def_fast_forward
+TODO: <https://git-scm.com/docs/gitglossary#def_fast_forward>
 
 ### Fetch
 
-TODO: https://git-scm.com/docs/gitglossary#def_fetch
+TODO: <https://git-scm.com/docs/gitglossary#def_fetch>
 
 See [Remote](remote.md).
 
@@ -370,7 +376,7 @@ The `$GIT_DIR` environment variable acts as a direct override to Git's default s
 
 ### gitfile
 
-TODO: https://git-scm.com/docs/gitglossary#def_gitfile
+TODO: <https://git-scm.com/docs/gitglossary#def_gitfile>
 
 ### `HEAD`
 
@@ -388,7 +394,7 @@ Explanation:
   history \[that\] `HEAD` represents operate on the history leading to the _tip_ of the branch
   the `HEAD` points at.
 
-Source: https://git-scm.com/docs/gitglossary#def_HEAD
+Source: <https://git-scm.com/docs/gitglossary#def_HEAD>
 
 ### Hook
 
@@ -397,7 +403,7 @@ Source: https://git-scm.com/docs/gitglossary#def_HEAD
 
 See [Hooks](hooks.md).
 
-Source: https://git-scm.com/docs/gitglossary#def_hook
+Source: <https://git-scm.com/docs/gitglossary#def_hook>
 
 ### Index
 
@@ -419,7 +425,7 @@ Technical details: it is usually a single file named `index` in the `.git` direc
 
 Sources:
 
-- https://git-scm.com/docs/gitglossary#def_index
+- <https://git-scm.com/docs/gitglossary#def_index>
 - Official Git book, section
   [Getting Started - What is Git?](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F)
 - Official Git book, section
@@ -436,7 +442,7 @@ Note:
 > \[It\] can be _unmerged_, if a [merge](#merge-verb) was started, but not yet finished
   (i.e. if the index contains multiple versions of that file).
 
-Source: https://git-scm.com/docs/gitglossary#def_index_entry
+Source: <https://git-scm.com/docs/gitglossary#def_index_entry>
 
 ### Log
 
@@ -446,7 +452,7 @@ See [Get information](get-information.md).
 
 ### Master
 
-TODO: https://git-scm.com/docs/gitglossary#def_master
+TODO: <https://git-scm.com/docs/gitglossary#def_master>
 
 ### Merge (verb)
 
@@ -466,7 +472,7 @@ Fetch and merge:
   [current branch](#current-branch).
 > This combination of [fetch](#fetch) and merge operations is called a [pull](#pull).
 
-Source: https://git-scm.com/docs/gitglossary#def_merge
+Source: <https://git-scm.com/docs/gitglossary#def_merge>
 
 See [Merge](merge.md).
 
@@ -482,7 +488,7 @@ Official definition:
   in the creation of a new _commit_ representing the result of the merge, and having as
   [parents](#parent) the _tips_ of the _merged branches_.
 
-Source: https://git-scm.com/docs/gitglossary#def_merge
+Source: <https://git-scm.com/docs/gitglossary#def_merge>
 
 ### Merge conflict
 
@@ -514,16 +520,14 @@ See [Merge (verb)](#merge-verb).
 
 ### Object
 
-TODO: https://git-scm.com/docs/gitglossary#def_object
+TODO: <https://git-scm.com/docs/gitglossary#def_object>
 
 ### Object database
-
-Aka "object identifier" (OID), "SHA-1" (colloquial).
 
 > Stores a set of _objects_, and an individual _object_ is identified by its _object name_.
 > The objects usually live in `$GIT_DIR/objects/`.
 
-Source: https://git-scm.com/docs/gitglossary#def_object_name
+Source: <https://git-scm.com/docs/gitglossary#def_object_database>
 
 ### Object name
 
@@ -532,45 +536,52 @@ Aka "object identifier" (OID), "hash", "SHA-1" (colloquial).
 > The unique identifier of an object. The object name is usually represented by a
   40-character hexadecimal string.
 
-Source: https://git-scm.com/docs/gitglossary#def_object_name
+Source: <https://git-scm.com/docs/gitglossary#def_object_name>
 
 See [Object](#object).
 
 ### Object type
 
+The type of an object. It can be:
+
+- `commit`
+- `tree`
+- `tag`
+- `blob`
+
 > One of the identifiers "commit", "tree", "tag" or "blob" describing the type of an object.
 
-Source: https://git-scm.com/docs/gitglossary#def_object_type
+Source: <https://git-scm.com/docs/gitglossary#def_object_type>
 
 See [Object](#object).
 
 ### Octopus
 
-TODO: https://git-scm.com/docs/gitglossary#def_octopus
+TODO: <https://git-scm.com/docs/gitglossary#def_octopus>
 
 ### Orphan
 
-TODO: https://git-scm.com/docs/gitglossary#def_orphan
+TODO: <https://git-scm.com/docs/gitglossary#def_orphan>
 
 ### Origin
 
-TODO: https://git-scm.com/docs/gitglossary#def_origin
+TODO: <https://git-scm.com/docs/gitglossary#def_origin>
 
 ### Overlay
 
-TODO: https://git-scm.com/docs/gitglossary#def_overlay
+TODO: <https://git-scm.com/docs/gitglossary#def_overlay>
 
 ### Pack
 
-TODO: https://git-scm.com/docs/gitglossary#def_pack
+TODO: <https://git-scm.com/docs/gitglossary#def_pack>
 
 ### Pack index
 
-TODO: https://git-scm.com/docs/gitglossary#def_pack_index
+TODO: <https://git-scm.com/docs/gitglossary#def_pack_index>
 
 ### Parent
 
-TODO: https://git-scm.com/docs/gitglossary#def_parent
+TODO: <https://git-scm.com/docs/gitglossary#def_parent>
 
 ### Path
 
@@ -578,49 +589,49 @@ TODO
 
 ### Pathspec
 
-TODO: https://git-scm.com/docs/gitglossary#def_pathspec
+TODO: <https://git-scm.com/docs/gitglossary#def_pathspec>
 
 ### Peel
 
 > The action of recursively [dereferencing a tag object](#tag-object-dereference).
 
-Source: https://git-scm.com/docs/gitglossary#def_peel
+Source: <https://git-scm.com/docs/gitglossary#def_peel>
 
 ### Per-worktree ref
 
-TODO: https://git-scm.com/docs/gitglossary#def_per-worktree_ref
+TODO: <https://git-scm.com/docs/gitglossary#def_per-worktree_ref>
 
 ### Pickaxe
 
-TODO: https://git-scm.com/docs/gitglossary#def_pickaxe
+TODO: <https://git-scm.com/docs/gitglossary#def_pickaxe>
 
 ### Porcelain
 
-TODO: https://git-scm.com/docs/gitglossary#def_porcelain
+TODO: <https://git-scm.com/docs/gitglossary#def_porcelain>
 
 ### Pseudoref
 
-TODO: https://git-scm.com/docs/gitglossary#def_pseudoref
+TODO: <https://git-scm.com/docs/gitglossary#def_pseudoref>
 
 ### Pull
 
-TODO: https://git-scm.com/docs/gitglossary#def_pull
+TODO: <https://git-scm.com/docs/gitglossary#def_pull>
 
 See [Remote](remote.md).
 
 ### Push
 
-TODO: https://git-scm.com/docs/gitglossary#def_push
+TODO: <https://git-scm.com/docs/gitglossary#def_push>
 
 See [Remote](remote.md).
 
 ### Reachability bitmaps
 
-TODO: https://git-scm.com/docs/gitglossary#def_reachability_bitmaps
+TODO: <https://git-scm.com/docs/gitglossary#def_reachability_bitmaps>
 
 ### Reachable
 
-TODO: https://git-scm.com/docs/gitglossary#def_reachable
+TODO: <https://git-scm.com/docs/gitglossary#def_reachable>
 
 ### Rebase
 
@@ -630,7 +641,7 @@ See [Rebase](rebase.md).
 
 ### Reference
 
-TODO: https://git-scm.com/docs/gitglossary#def_ref
+TODO: <https://git-scm.com/docs/gitglossary#def_ref>
 
 Aka "ref".
 
@@ -642,7 +653,7 @@ See [Reflog](reflog.md).
 
 ### Refspec
 
-TODO: https://git-scm.com/docs/gitglossary#def_refspec
+TODO: <https://git-scm.com/docs/gitglossary#def_refspec>
 
 ### Remote
 
@@ -654,7 +665,7 @@ See [Remote](remote.md).
 
 ### Remote repository
 
-TODO: https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-remoterepository
+TODO: <https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-remoterepository>
 
 ### Remote-tracking branch
 
@@ -662,7 +673,7 @@ TODO: https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-remoter
 > It typically looks like `refs/remotes/foo/bar` (indicating that it tracks a branch named `bar`
   in a remote named `foo`), and matches the right-hand-side of a configured fetch refspec. A remote-tracking branch should not contain direct modifications or have local commits made to it.
 
-Source: https://git-scm.com/docs/gitglossary#def_remote-tracking_branch
+Source: <https://git-scm.com/docs/gitglossary#def_remote-tracking_branch>
 
 See [Branch](#branch), [Remote repository](#remote-repository).
 
@@ -684,11 +695,11 @@ Per GitHub Copilot (GPT-4.1):
 
 ### Resolve
 
-TODO: https://git-scm.com/docs/gitglossary#def_resolve
+TODO: <https://git-scm.com/docs/gitglossary#def_resolve>
 
 ### Rewind
 
-TODO: https://git-scm.com/docs/gitglossary#def_rewind
+TODO: <https://git-scm.com/docs/gitglossary#def_rewind>
 
 ### Sequence editor
 
@@ -696,17 +707,17 @@ TODO
 
 ### Shallow clone
 
-TODO: https://git-scm.com/docs/gitglossary#def_shallow_clone
+TODO: <https://git-scm.com/docs/gitglossary#def_shallow_clone>
 
 ### Shallow repository
 
-TODO: https://git-scm.com/docs/gitglossary#def_shallow_repository
+TODO: <https://git-scm.com/docs/gitglossary#def_shallow_repository>
 
 ### Signed tag object
 
 A [tag object](#tag-object) that contains a (PGP) signature.
 
-Source: https://git-scm.com/docs/gitglossary#def_tag_object
+Source: <https://git-scm.com/docs/gitglossary#def_tag_object>
 
 ### Stage
 
@@ -724,7 +735,7 @@ See [Index and Working tree](index-working-tree.md).
 
 ### Stash entry
 
-TODO: https://git-scm.com/docs/gitglossary#def_stash_entry
+TODO: <https://git-scm.com/docs/gitglossary#def_stash_entry>
 
 ### Submodule
 
@@ -733,19 +744,27 @@ TODO: https://git-scm.com/docs/gitglossary#def_stash_entry
 
 See [Submodules](submodules.md).
 
-Source: https://git-scm.com/docs/gitglossary#def_submodule
+Source: <https://git-scm.com/docs/gitglossary#def_submodule>
 
 ### Superproject
 
 (sic)
 
-TODO: https://git-scm.com/docs/gitglossary#def_superproject
+TODO: <https://git-scm.com/docs/gitglossary#def_superproject>
 
 See [Submodule](#submodule).
 
 ### Symbolic reference (symref)
 
-TODO: https://git-scm.com/docs/gitglossary#def_symref
+It is a reference that is of the format `refs/some/thing` (instead of the
+[object name](#object-name) aka "SHA-1 id" or "hash") and that, when referenced, it recursively
+[dereferences](#symbolic-reference-dereference) to this reference.
+
+> Symbolic references are manipulated with the `git-symbolic-ref` command.
+
+Example of a _symref_: [HEAD](#head)
+
+Source: <https://git-scm.com/docs/gitglossary#def_symref>
 
 ### Symbolic reference dereference
 
@@ -755,7 +774,7 @@ TODO: https://git-scm.com/docs/gitglossary#def_symref
 > _Recursive dereferencing_ involves repeating the aforementioned process on the resulting ref
   until a non-symbolic reference is found.
 
-Source: https://git-scm.com/docs/gitglossary#def_dereference
+Source: <https://git-scm.com/docs/gitglossary#def_dereference>
 
 ### Tag
 
@@ -766,7 +785,7 @@ Source: https://git-scm.com/docs/gitglossary#def_dereference
 >
 > A tag is most typically used to mark a particular point in the commit ancestry [chain](#chain).
 
-Source: https://git-scm.com/docs/gitglossary#def_tag_object
+Source: <https://git-scm.com/docs/gitglossary#def_tag_object>
 
 See [Tag](tag.md).
 
@@ -775,7 +794,7 @@ See [Tag](tag.md).
 > An _object_ containing a _ref_ pointing to another _object_, which can contain a message
   just like a [commit object](#commit-object).
 
-Source: https://git-scm.com/docs/gitglossary#def_tag_object
+Source: <https://git-scm.com/docs/gitglossary#def_tag_object>
 
 See [Tag](#tag), [Signed tag object](#signed-tag-object).
 
@@ -788,43 +807,43 @@ See [Tag](#tag), [Signed tag object](#signed-tag-object).
 >
 > A synonym for "recursive dereference" in the context of tags is _peel_.
 
-Source: https://git-scm.com/docs/gitglossary#def_dereference
+Source: <https://git-scm.com/docs/gitglossary#def_dereference>
 
 ### Topic branch
 
-TODO: https://git-scm.com/docs/gitglossary#def_topic_branch
+TODO: <https://git-scm.com/docs/gitglossary#def_topic_branch>
 
 ### Trailer
 
-TODO: https://git-scm.com/docs/gitglossary#def_trailer
+TODO: <https://git-scm.com/docs/gitglossary#def_trailer>
 
 ### Tree
 
-TODO: https://git-scm.com/docs/gitglossary#def_tree
+TODO: <https://git-scm.com/docs/gitglossary#def_tree>
 
 ### Tree object
 
-TODO: https://git-scm.com/docs/gitglossary#def_tree_object
+TODO: <https://git-scm.com/docs/gitglossary#def_tree_object>
 
 ### Tree-ish
 
-TODO: https://git-scm.com/docs/gitglossary#def_tree-ish
+TODO: <https://git-scm.com/docs/gitglossary#def_tree-ish>
 
 ### Unborn
 
-TODO: https://git-scm.com/docs/gitglossary#def_unborn
+TODO: <https://git-scm.com/docs/gitglossary#def_unborn>
 
 ### Unmerged index
 
-TODO: https://git-scm.com/docs/gitglossary#def_unmerged_index
+TODO: <https://git-scm.com/docs/gitglossary#def_unmerged_index>
 
 ### Unreachable object
 
-TODO: https://git-scm.com/docs/gitglossary#def_unreachable_object
+TODO: <https://git-scm.com/docs/gitglossary#def_unreachable_object>
 
 ### Upstream branch
 
-TODO: https://git-scm.com/docs/gitglossary#def_upstream_branch
+TODO: <https://git-scm.com/docs/gitglossary#def_upstream_branch>
 
 ### Working directory
 
@@ -856,8 +875,8 @@ See [Index and Working tree](index-working-tree.md).
 
 Sources:
 
-- https://git-scm.com/docs/gitglossary#def_working_tree
+- <https://git-scm.com/docs/gitglossary#def_working_tree>
 
 ### Worktree
 
-TODO: https://git-scm.com/docs/gitglossary#def_worktree
+TODO: <https://git-scm.com/docs/gitglossary#def_worktree>
