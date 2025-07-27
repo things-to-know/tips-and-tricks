@@ -16,3 +16,22 @@ Main commands:
 Other commands:
 
 - TODO
+
+## How-to
+
+TODO
+
+## Reference
+
+TODO
+
+### Command
+
+TODO
+
+## Troubleshooting
+
+### Common errors due to unsupported options
+
+- for `git cherry-pick`:
+  - `--reset-author` is not supported (as of 2.34.1)

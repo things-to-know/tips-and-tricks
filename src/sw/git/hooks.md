@@ -21,3 +21,19 @@ Main commands:
 Other commands:
 
 - TODO
+
+## How-to
+
+TODO
+
+## Reference
+
+TODO
+
+### Command
+
+TODO
+
+## Troubleshooting
+
+TODO

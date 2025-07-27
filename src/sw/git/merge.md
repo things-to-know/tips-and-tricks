@@ -17,6 +17,16 @@ TODO
 - `git-merge-base`: "Find as good common ancestors as possible for a merge"
   <https://git-scm.com/docs/git-merge-base>
 
+## Get information
+
+Main commands:
+
+- TODO
+
+Other commands:
+
+- TODO
+
 ## How-to
 
 TODO
@@ -34,3 +44,10 @@ TODO
 TODO
 
 <https://git-scm.com/docs/git-merge#_merge_strategies>
+
+## Troubleshooting
+
+### Common errors due to unsupported options
+
+- for `git merge`:
+  - `--date` is not supported (as of 2.34.1)
