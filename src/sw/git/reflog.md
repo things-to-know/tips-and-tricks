@@ -2,6 +2,10 @@
 
 TODO
 
+_Reflog_ means _reference log_.
+
+See [glossary](glossary.md#reflog) for more information about reflog.
+
 ## Commands
 
 - `git-reflog`: "Manage reflog information"
@@ -9,10 +13,20 @@ TODO
 
 ## Get information
 
-Main commands:
+TODO
 
-- TODO
+## How-to
 
-Other commands:
+TODO
 
-- TODO
+## Reference
+
+TODO
+
+### Command
+
+TODO
+
+## Troubleshooting
+
+TODO

@@ -2,7 +2,19 @@
 
 TODO
 
-Category: source code management tool
+### Classifiers
+
+- License: open source, GNU GPL-3.0
+- Category: source code management tool
+- Interface: CLI, GUI
+- Runtime environment: N/A
+- Operating System: OS-independent
+  - Linux
+  - BSD: partially supported
+  - Windows: no
+- Distribution:
+  - Linux distributions' repositories
+    - Package name: `git`
 
 ## Contents
 
@@ -19,9 +31,11 @@ Category: source code management tool
   - [Cherry-pick](cherry-pick.md)
   - [Reset, Restore and Revert](reset-restore-revert.md)
   - [Tag](tag.md)
+  - [Patch](patch.md)
   - [Get information](get-information.md)
   - [Find](find.md)
   - [Hooks](hooks.md)
+  - [Reflog](reflog.md)
   - [Submodules](submodules.md)
   - [Maintenance](maintenance.md)
 - [Configuration](configuration.md)

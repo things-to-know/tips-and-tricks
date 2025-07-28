@@ -9,13 +9,7 @@ TODO
 
 ## Get information
 
-Main commands:
-
-- TODO
-
-Other commands:
-
-- TODO
+TODO
 
 ## How-to
 

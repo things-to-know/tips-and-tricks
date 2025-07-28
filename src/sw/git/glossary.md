@@ -27,6 +27,10 @@ Source: <https://git-scm.com/docs/gitsubmodules>
 
 See [Submodule](#submodule).
 
+### Ancestor
+
+TODO
+
 ### Bare repository
 
 TODO: <https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-barerepository>
@@ -120,23 +124,32 @@ TODO: <https://git-scm.com/docs/gitglossary#def_chain>
 
 ### Check out (verb)
 
-TODO: <https://git-scm.com/docs/gitglossary#def_checkout>
+Action executed using the command `git checkout`.
 
-Per GitHub Copilot (GPT-4.1):
+Official:
 
-> To "check out" means to switch your working directory to a specific branch, commit, or tag.
-> This updates the files in your working directory to match the state of the selected reference.
-> The command used is `git checkout`.
+> The action of updating all or part of the [working tree](#working-tree) with a
+  [tree object](#tree-object) or [blob](#blob-object) \[object\] from the
+  [object database](#object-database), and updating the [index](#index) and [HEAD](#head)
+  if the whole working tree has been pointed at a new [branch](#branch).
 
-See [Index and Working tree](index-working-tree.md).
+To "check out" means to switch your working directory to a specific branch, commit or tag.
+This updates the files in your working directory to match the state of the selected reference.
+
+See [Checked out (adjective)](#checked-out-adjective), and
+[Index and Working tree](index-working-tree.md).
+
+Source: <https://git-scm.com/docs/gitglossary#def_checkout>
 
 ### Checked out (adjective)
 
+_Checked out_ is an adjective for a [branch](#current-branch), [commit](#commit-noun) or [tag](#tag-noun)
+that is currently active in your
+[working directory](#working-directory).
+The files you see and edit in the repository are from this checked-out [reference](#reference).
+
 Note: we would have chosen "checked-out" instead, but the Git documentation uses "checked out"
 (without a hyphen).
-
-> "Checked out" describes the branch, commit, or tag that is currently active in your
-> working directory. The files you see and edit are from this checked out reference.
 
 See [Check out (verb)](#check-out-verb).
 
@@ -355,9 +368,15 @@ TODO: <https://git-scm.com/docs/gitglossary#def_fast_forward>
 
 ### Fetch
 
-TODO: <https://git-scm.com/docs/gitglossary#def_fetch>
+Official:
 
-See [Remote](remote.md).
+> Fetching a branch means to get the [branch's head ref](#branch-head-ref-head) from a
+  [remote repository](#remote-repository), to find out which [objects](#object) are missing
+  from the local [object database](#object-database), and to get them, too.
+
+See [Pull](#pull) and [Remote](remote.md).
+
+Source: <https://git-scm.com/docs/gitglossary#def_fetch>
 
 ### Git directory
 
@@ -520,11 +539,23 @@ See [Merge (verb)](#merge-verb).
 
 ### Object
 
-TODO: <https://git-scm.com/docs/gitglossary#def_object>
+Official:
+
+> The _unit of storage_ in Git. It is uniquely identified by the SHA-1 of its contents
+  \[([object name](#object-name))\].
+
+An object can't be changed because if it was changed, then hash value would change,
+thus making it a different object.
+
+See [Object name](#object-name).
+
+Source: <https://git-scm.com/docs/gitglossary#def_object>
 
 ### Object database
 
-> Stores a set of _objects_, and an individual _object_ is identified by its _object name_.
+> Stores a set of [objects](#object), and an individual _object_ is identified by its
+  [object name](#object-name).
+>
 > The objects usually live in `$GIT_DIR/objects/`.
 
 Source: <https://git-scm.com/docs/gitglossary#def_object_database>
@@ -615,11 +646,26 @@ TODO: <https://git-scm.com/docs/gitglossary#def_pseudoref>
 
 ### Pull
 
-TODO: <https://git-scm.com/docs/gitglossary#def_pull>
+The combined, sequential actions of:
+
+1. [Fetching a branch](#fetch) from a [remote repository](#remote-repository)
+   (i.e. getting the latest changes from the remote branch)
+2. [Merging](#merge-verb) it into the [current branch](#current-branch).
 
 See [Remote](remote.md).
 
+Source: <https://git-scm.com/docs/gitglossary#def_pull>
+
 ### Push
+
+Official:
+
+> Pushing a branch means to get the [branch's head ref](#branch-head-ref-head)
+  from a [remote repository](#remote-repository), find out if it is an [ancestor](#ancestor)
+  to the branch's local head ref, and in that case, putting all objects, which are
+  [reachable](#reachable) from the local head ref, and which are missing from the remote repository,
+  into the remote object database, and updating the remote head ref.
+  If the remote head is not an ancestor to the local head, the push fails.
 
 TODO: <https://git-scm.com/docs/gitglossary#def_push>
 
@@ -641,11 +687,20 @@ See [Rebase](rebase.md).
 
 ### Reference
 
-TODO: <https://git-scm.com/docs/gitglossary#def_ref>
+Aka "ref", "ref name".
 
-Aka "ref".
+A _ref_ is a name that points to an [object name](#object-name) or a
+[symbolic reference](#symbolic-reference-symref).
+They're used to refer to [commits](#commit-noun) and other objects in the
+[object database](#object-database).
+
+See [Ref](ref.md).
+
+Source: <https://git-scm.com/docs/gitglossary#def_ref>
 
 ### Reflog
+
+Reference log.
 
 TODO
 
@@ -653,7 +708,16 @@ See [Reflog](reflog.md).
 
 ### Refspec
 
-TODO: <https://git-scm.com/docs/gitglossary#def_refspec>
+Official:
+
+> A _refspec_ is used by [fetch](#fetch) and [push](#push) to describe the mapping between
+  remote ref and local ref.
+
+It is a string that defines the mapping between a local reference (ref) and a remote reference.
+It forms the foundation of how repositories are synchronized by providing a way to tell
+[fetch](#fetch) and [push](#push) commands which refs to update and how to update them.
+
+Source: <https://git-scm.com/docs/gitglossary#def_refspec>
 
 ### Remote
 
@@ -669,13 +733,20 @@ TODO: <https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-remote
 
 ### Remote-tracking branch
 
-> A ref that is used to follow changes from another repository.
-> It typically looks like `refs/remotes/foo/bar` (indicating that it tracks a branch named `bar`
-  in a remote named `foo`), and matches the right-hand-side of a configured fetch refspec. A remote-tracking branch should not contain direct modifications or have local commits made to it.
+> A [ref](#reference) that is used to follow changes from another [repository](#repository)
+  \[(typically a [remote repository](#remote-repository))\].
+
+Details:
+
+- > It typically looks like `refs/remotes/foo/bar` (indicating that it tracks a branch named `bar`
+    in a remote named `foo`), and matches the right-hand-side of a configured fetch
+    [refspec](#refspec).
+- > A remote-tracking branch should not contain direct modifications or have local commits
+    made to it.
+
+See [Branch](#branch), [Remote](remote.md).
 
 Source: <https://git-scm.com/docs/gitglossary#def_remote-tracking_branch>
-
-See [Branch](#branch), [Remote repository](#remote-repository).
 
 ### Repository
 
@@ -696,6 +767,12 @@ Per GitHub Copilot (GPT-4.1):
 ### Resolve
 
 TODO: <https://git-scm.com/docs/gitglossary#def_resolve>
+
+### Revision parameter
+
+A string input to a Git command that specifies, or resolves to, a commit, object, or commit range.
+
+See [Ref](ref.md).
 
 ### Rewind
 
@@ -776,7 +853,9 @@ Source: <https://git-scm.com/docs/gitglossary#def_symref>
 
 Source: <https://git-scm.com/docs/gitglossary#def_dereference>
 
-### Tag
+### Tag (noun)
+
+Official:
 
 > A _ref_ under `refs/tags/` _namespace_ that points to an object of an arbitrary type
   (typically a tag points to either a [tag](#tag-object) or a [commit object](#commit-object)).
@@ -796,7 +875,7 @@ See [Tag](tag.md).
 
 Source: <https://git-scm.com/docs/gitglossary#def_tag_object>
 
-See [Tag](#tag), [Signed tag object](#signed-tag-object).
+See [Tag](#tag-noun), [Signed tag object](#signed-tag-object).
 
 ### Tag object dereference
 

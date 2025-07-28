@@ -8,3 +8,23 @@ TODO
   <https://git-scm.com/docs/git-tag>
 - `git-verify-tag`: "Check the GPG signature of tags"
   <https://git-scm.com/docs/git-verify-tag>
+
+## Get information
+
+TODO
+
+## How-to
+
+TODO
+
+## Reference
+
+TODO
+
+### Command
+
+TODO
+
+## Troubleshooting
+
+TODO

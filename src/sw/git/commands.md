@@ -30,18 +30,23 @@ Commands that are essential for using Git at all.
 Besides the basic commands, these commands are useful for most users, for normal and advanced
 usage of Git.
 
-- `git-cherry-pick`: "Apply the changes introduced by some existing commits"
-- `git-difftool`: "Show changes using common diff tools"
-- `git-hook`: "Run git hooks"
-- `git-mergetool`: "Run merge conflict resolution tools to resolve merge conflicts"
-- `git-reflog`: "Manage reflog information"
-- `git-reset`: "Reset current HEAD to the specified state"
-- `git-restore`: "Restore working tree files"
-- `git-show-branch`: "Show branches and their commits"
-- `git-stash`: "Stash the changes in a dirty working directory away"
-- `git-submodule`: "Initialize, update or inspect submodules"
-- `git-tag`: "Create, list, delete or verify a tag object signed with GPG"
-- `githooks`: "Hooks used by Git"
+| command            | document                                             | brief description                                                |
+|--------------------|------------------------------------------------------|------------------------------------------------------------------|
+| `git-am`           | [Patch](patch.md)                                    | "Apply a series of patches from a mailbox"                       |
+| `git-apply`        | [Patch](patch.md)                                    | "Apply a patch to files and/or to the index"                     |
+| `git-cherry-pick`  | [Cherry-pick](cherry-pick.md)                        | "Apply the changes introduced by some existing commits"          |
+| `git-difftool`     | [Diff](diff.md)                                      | "Show changes using common diff tools"                           |
+| `git-format-patch` | [Patch](patch.md)                                    | "Prepare patches for e-mail submission"                          |
+| `git-hook`         | [Hooks](hooks.md)                                    | "Run git hooks"                                                  |
+| `git-mergetool`    | [Merge](merge.md)                                    | "Run merge conflict resolution tools to resolve merge conflicts" |
+| `git-reflog`       | [Reflog](reflog.md)                                  | "Manage reflog information"                                      |
+| `git-reset`        | [Reset, Restore and Revert](reset-restore-revert.md) | "Reset current HEAD to the specified state"                      |
+| `git-restore`      | [Reset, Restore and Revert](reset-restore-revert.md) | "Restore working tree files"                                     |
+| `git-revert`       | [Reset, Restore and Revert](reset-restore-revert.md) | "Revert some existing commits"                                   |
+| `git-show-branch`  | [Branch](branch.md)                                  | "Show branches and their commits"                                |
+| `git-stash`        | [Index and Working Tree](index-working-tree.md)      | "Stash the changes in a dirty working directory away"            |
+| `git-submodule`    | [Submodules](submodules.md)                          | "Initialize, update or inspect submodules"                       |
+| `git-tag`          | [Tag](tag.md)                                        | "Create, list, delete or verify a tag object signed with GPG"    |
 
 ### Experimental commands
 
@@ -56,8 +61,7 @@ usage of Git.
 
 These commands are too low-level for most users, and it is unlikely that you will need to use them.
 
-- `git-apply`: "Apply a patch to files and/or to the index"
-- `git-check-ref-format`: "Ensures that a reference name is well formed"
+- `git-check-ref-format`: "Ensures that a reference name is well-formed"
 - `git-checkout-index`: "Copy files from the index to the working tree"
 - `git-commit-graph`: "Write and verify Git commit-graph files"
 - `git-commit-tree`: "Create a new commit object"
@@ -91,7 +95,13 @@ Commands:
 - `git-annotate`: "Annotate file lines with commit information"
   <https://git-scm.com/docs/git-annotate>
   - Use `git blame` instead.
+- `git-send-email`: "Send a collection of patches as emails"
+  <https://git-scm.com/docs/git-send-email>
+  - Git has no business sending emails.
 
 Not a command:
 
-- grafts mechanism: outdated and error-prone
+- _grafts mechanism_: outdated and error-prone
+  > Note that the grafts mechanism is outdated and can lead to problems transferring objects
+    between repositories; see `git-replace` for a more flexible and robust system to do
+    the same thing.
