@@ -155,3 +155,21 @@ Technically:
 - replace all occurrences of `(extras|archive|security).ubuntu.com`
   with `old-releases.ubuntu.com`
 - `sudo apt update`
+
+## Misc
+
+### Get the kernel source code
+
+To get the source code of the kernel installed on your system, run:
+
+```bash
+apt source linux-image-unsigned-$(uname -r)
+```
+
+It will download the source code of the kernel package that matches your current kernel version.
+
+If you get this error:
+
+> E: You must put some 'deb-src' URIs in your sources.list
+
+you need to enable the source repositories in your `/etc/apt/sources.list` file.
