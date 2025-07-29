@@ -65,6 +65,12 @@ In computer science, a _code_ is \[[Wikipedia](https://en.wikipedia.org/wiki/Cod
 
 TODO
 
+### Compiler \[Computer science\]
+
+TODO: <https://en.wikipedia.org/wiki/Compiler>
+
+Verify if qualifier is appropriate
+
 ### Computation \[Computer science\]
 
 [Wikipedia](https://en.wikipedia.org/wiki/Computation):
@@ -76,6 +82,18 @@ TODO
 _Computer science_ is an academic field that involves the study of _computation_.
 
 See [Model of computation](#model-of-computation-computer-science).
+
+### Computational logic
+
+TODO: <https://en.wikipedia.org/wiki/Computational_logic>
+
+### Computer program
+
+TODO: <https://en.wikipedia.org/wiki/Computer_program>
+
+### Computer science
+
+TODO: <https://en.wikipedia.org/wiki/Computer_science>
 
 ### Computer system
 
@@ -130,7 +148,7 @@ The discipline that embodies principles, means and methods for the
 
 ### Data structure \[Computer science\]
 
-TODO
+TODO: <https://en.wikipedia.org/wiki/Data_structure>
 
 ### Data tampering \[Computer science\]
 
@@ -146,7 +164,9 @@ TODO
 
 ### Data type \[Computer science\]
 
-TODO
+Aka "type" (avoid).
+
+TODO: <https://en.wikipedia.org/wiki/Data_type>
 
 ### Decryption \[Cryptography\]
 
@@ -159,6 +179,48 @@ It is the inverse of [encryption](#encryption-cryptography).
 
 See [Encryption](#encryption-cryptography),
 [Encryption algorithm](#encryption-algorithm-cryptography), [Cipher](#cipher-cryptography).
+
+### Digital signature
+
+Aka "signature".
+
+A string of bits computed from data and a [private key](#private-key-cryptography).
+It allows a recipient, using the corresponding [public key](#public-key), to
+[verify the origin](#proof-of-origin-computer-science) and
+[integrity](#proof-of-integrity-computer-science) of the data.
+
+Digital signatures are a type of [public-key cryptography](#public-key-cryptography), and are
+commonly used for _software distribution_, financial transactions, legal contracts,
+and in other cases where it is important to detect forgery or
+[tampering](#data-tampering-computer-science).
+
+[Wikipedia](https://en.wikipedia.org/wiki/Digital_signature):
+
+> [...] a digital signature on a message is mathematically bound to the content of the message
+  so that it is infeasible for anyone to forge a valid digital signature on any other message.
+
+See [Digital signature scheme](#digital-signature-scheme).
+
+### Digital signature scheme
+
+[Wikipedia](https://en.wikipedia.org/wiki/Digital_signature):
+
+> A mathematical scheme for verifying the authenticity of digital messages or documents.
+  A valid [digital signature](#digital-signature) on a message gives a recipient confidence
+  that the message came from a sender known to the recipient.
+
+A digital signature scheme typically consists of three algorithms:
+
+- A [key generation algorithm](#key-generation-algorithm-cryptography)
+- A [signing algorithm](#signing-algorithm-digital-signature)
+- A [signature verification algorithm](#signature-verification-algorithm)
+
+### Digital Signature Algorithm (DSA)
+
+The original [cryptographic algorithm](#cryptographic-algorithm) for generating digital signatures,
+that, as of FIPS 186-5, is **no longer approved** for generating new signatures, but can be used
+to [verify signatures](#signature-verification-digital-signature) created before
+the standard's implementation date.
 
 ### Decoding
 
@@ -195,40 +257,6 @@ See [Decryption](#decryption-cryptography),
 
 TODO
 
-### Digital signature
-
-Aka "signature".
-
-A string of bits computed from data and a [private key](#private-key-cryptography).
-It allows a recipient, using the corresponding public key, to [verify the origin](#proof-of-origin-computer-science)
-and [integrity](#proof-of-integrity-computer-science) of the data.
-
-Digital signatures are a type of [public-key cryptography](#public-key-cryptography), and are
-commonly used for _software distribution_, financial transactions, legal contracts,
-and in other cases where it is important to detect forgery or [tampering](#data-tampering-computer-science).
-
-[Wikipedia](https://en.wikipedia.org/wiki/Digital_signature):
-
-> A mathematical scheme for verifying the authenticity of digital messages or documents.
-  A valid digital signature on a message gives a recipient confidence that the message
-  came from a sender known to the recipient.
-> [...] a digital signature on a message is mathematically bound to the content of the message
-  so that it is infeasible for anyone to forge a valid digital signature on any other message.
-
-### Digital signature scheme
-
-A digital signature scheme typically consists of three algorithms:
-
-- A [key generation algorithm](#key-generation-algorithm-cryptography)
-- A [signing algorithm](#signing-algorithm-digital-signature)
-- A [signature verification algorithm](#signature-verification-algorithm)
-
-### Digital Signature Algorithm (DSA)
-
-The original [cryptographic algorithm](#cryptographic-algorithm) for generating digital signatures,
-that, as of FIPS 186-5, is no longer approved for generating new signatures, but can be used
-to verify signatures created before the standard's implementation date.
-
 ### Federal Information Processing Standards (FIPS)
 
 The official series of publications relating to standards and guidelines adopted by NIST
@@ -246,6 +274,7 @@ TODO
 
 A [map](#map-noun-computer-science) of an arbitrary binary string to a binary string with
 a fixed size of `n` bits.
+A [function](#function-computer-science) that maps an arbitrary-length binary string to a binary string of fixed size `n` bits, typically used for indexing or data integrity.
 
 ### Hash code
 
@@ -340,8 +369,12 @@ A device or program used to generate keys using a
 In cryptography, a keypair is a mathematically linked pair of keys used in
 [public-key (asymmetric) cryptography](#public-key-cryptography).
 
-- a [public key](#public-key-cryptography) (which may be widely distributed), and
+- a [public key](#public-key) (which may be widely distributed), and
 - a [private key](#private-key-cryptography) (which is kept secret).
+
+### Macro \[Computer science\]
+
+TODO: <https://en.wikipedia.org/wiki/Macro_(computer_science)>
 
 ### Map (noun) \[Computer science\]
 
@@ -350,6 +383,10 @@ TODO
 ### Map (verb) \[Computer science\]
 
 TODO
+
+### Metaprogramming
+
+TODO: <https://en.wikipedia.org/wiki/Metaprogramming>
 
 ### Model of computation \[Computer science\]
 
@@ -415,6 +452,14 @@ See [Encryption](#encryption-cryptography), [Decryption](#decryption-cryptograph
 
 TODO
 
+### Programming language
+
+TODO: <https://en.wikipedia.org/wiki/Programming_language>
+
+### Programming paradigm
+
+TODO: <https://en.wikipedia.org/wiki/Programming_paradigm>
+
 ### Proof of integrity \[Computer science\]
 
 TODO
@@ -428,7 +473,7 @@ TODO
 TODO: see <https://en.wikipedia.org/wiki/Pseudorandom_number_generator>,
 <https://en.wikipedia.org/wiki/Pseudorandom_generator>
 
-### Public-key \[Cryptography\]
+### Public-key \[Cryptography\] {#public-key}
 
 TODO
 
@@ -442,7 +487,7 @@ A form of [cryptography](#cryptography) that uses a pair of keys
 For digital signatures:
 
 - the [private key](#private-key-cryptography) is used to sign, and
-- the public key is used to verify.
+- the [public key](#public-key) is used to verify.
 
 ### Secure communication \[Computer science\]
 
@@ -461,7 +506,7 @@ See [Digital signature scheme](#digital-signature-scheme).
 
 ### Signature verification algorithm
 
-An "[algorithm](#algorithm-computer-science) that, given the message, [public key](#public-key-)
+An "[algorithm](#algorithm-computer-science) that, given the message, [public key](#public-key)
 and [signature](#digital-signature), either accepts or rejects the message's _claim_
 to _authenticity_."
 
@@ -499,3 +544,7 @@ TODO
 ### Third-party verification \[Cryptography\]
 
 TODO
+
+### Value \[Computer science\]
+
+TODO: <https://en.wikipedia.org/wiki/Value_(computer_science)>
