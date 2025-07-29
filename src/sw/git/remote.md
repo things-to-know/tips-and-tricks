@@ -131,7 +131,8 @@ TODO
       config, or elsewhere). Different values are well-suited for specific workflows; for instance,
       in a purely central workflow (i.e. the fetch source is equal to the push destination),
       `upstream` is probably what you want.
-
+- `push.autoSetupRemote`: TODO.
+  See <https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushautoSetupRemote>
 
 ### Refspec
 
