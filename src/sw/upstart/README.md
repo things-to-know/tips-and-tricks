@@ -1,6 +1,7 @@
 # Software / Upstart
 
-- Homepage
+- Homepage: <https://launchpad.net/upstart>
+- Code repo: <https://git.launchpad.net/upstart>
 
 Deprecated/discontinued: as of 2025-08-20, the latest release was 1.13.3 (2014)
 
