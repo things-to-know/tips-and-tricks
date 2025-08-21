@@ -1,5 +1,10 @@
 # `xmllint`
 
+TODO:
+
+- convert file to "linting", instead of specific to xmllint
+- reference `src/sw/libxml2/README.md#xmllint`
+
 It is a command-line XML tool that is part of the
 [`libxml2`](https://gitlab.gnome.org/GNOME/libxml2) library.
 
