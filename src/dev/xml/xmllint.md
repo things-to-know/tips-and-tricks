@@ -5,13 +5,6 @@ TODO:
 - convert file to "linting", instead of specific to xmllint
 - reference `src/sw/libxml2/README.md#xmllint`
 
-It is a command-line XML tool that is part of the
-[`libxml2`](https://gitlab.gnome.org/GNOME/libxml2) library.
-
-- Man page: <https://gnome.pages.gitlab.gnome.org/libxml2/xmllint.html>
-- Source code: <https://gitlab.gnome.org/GNOME/libxml2/-/blob/master/xmllint.c>
-- Docs source: <https://gitlab.gnome.org/GNOME/libxml2/-/blob/master/doc/xmllint.xml>
-
 ## How to
 
 ### Validate against XSD schema
