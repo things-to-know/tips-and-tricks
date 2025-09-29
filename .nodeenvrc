@@ -1,5 +1,5 @@
 [nodeenv]
-node = 22.16.0
+node = 22.20.0
 npm = latest
 without_ssl = False
 debug = False
