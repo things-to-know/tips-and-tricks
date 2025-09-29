@@ -36,7 +36,7 @@ Jupyter Book v2 is, as of 2025-06-19, still in alpha stage, and the latest versi
 
 ### Dependencies
 
-- Python 3.11
+- Python 3.13
 - Node.js 22.x
 - Jupyter Book v2
 
