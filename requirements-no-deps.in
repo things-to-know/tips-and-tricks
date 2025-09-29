@@ -1,4 +1,4 @@
 # Main requirements (to be installed without dependencies)
 
 # See `requirements.in` for explanation of why it is defined in this file
-jupyter-book>=2.0.0a3
+jupyter-book>=2.0.0b3
