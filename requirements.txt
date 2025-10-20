@@ -4,7 +4,7 @@
 #
 #    pip-compile --cert=None --client-cert=None --index-url=None --output-file=requirements.txt --pip-args=None --strip-extras requirements.in
 #
-jupyter-core==5.8.1
+jupyter-core==5.9.1
     # via -r requirements.in
 nodeenv==1.9.1
     # via -r requirements.in
