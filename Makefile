@@ -21,6 +21,9 @@ PYTHON_REQUIREMENTS_NO_DEPS_FILE = requirements-no-deps.in
 PYTHON_REQUIREMENTS_DEV_SRC_FILE = requirements-dev.in
 PYTHON_REQUIREMENTS_DEV_FILE = requirements-dev.txt
 
+# Node.js
+NODEJS_VERSION_FILE ?= .node-version
+
 # nodeenv: Node.js virtual environment (sandbox) builder
 NODEENV_CONFIG_FILE ?= ${ROOT_DIR}/.nodeenvrc
 
@@ -63,7 +66,7 @@ delete-venv: ## Delete virtual environment (Python and Node.js)
 .PHONY: install-node
 install-node: ## Install Node.js into the Python virtual environment
 	${VENV_PIP} show --quiet nodeenv
-	${NODEENV} --config-file="${NODEENV_CONFIG_FILE}" --python-virtualenv
+	${NODEENV} --node="$$(cat .node-version)" --with-npm --npm 'latest' --prebuilt --python-virtualenv
 	@echo -e "\nNode installed in local Python virtualenv"
 	@${VENV_NODEJS} --version
 

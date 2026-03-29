@@ -1,7 +1,0 @@
-[nodeenv]
-node = 22.20.0
-npm = latest
-without_ssl = False
-debug = False
-prebuilt = True
-ignore_ssl_certs = False
