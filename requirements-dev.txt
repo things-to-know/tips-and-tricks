@@ -20,7 +20,7 @@ platformdirs==4.4.0
     # via
     #   -c requirements.txt
     #   virtualenv
-pre-commit==4.3.0
+pre-commit==4.5.1
     # via -r requirements-dev.in
 pyyaml==6.0.3
     # via pre-commit
